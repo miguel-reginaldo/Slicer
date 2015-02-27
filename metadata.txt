@@ -13,7 +13,7 @@ name=Slicer
 qgisMinimumVersion=2.0
 description=Grouping of pixels on a raster classes
 version=1.0
-author=Miguel Reginaldo Teixeira da Silva/INCRA/PI
+author=Miguel Reginaldo Teixeira da Silva
 email=miguel.reginaldo@tsa.incra.gov.br
 #about=
 
