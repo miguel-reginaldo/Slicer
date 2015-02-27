@@ -15,6 +15,7 @@ description=Grouping of pixels on a raster classes
 version=1.0
 author=Miguel Reginaldo Teixeira da Silva/INCRA/PI
 email=miguel.reginaldo@tsa.incra.gov.br
+#about=
 
 # end of mandatory metadata
 
@@ -24,7 +25,7 @@ email=miguel.reginaldo@tsa.incra.gov.br
 # changelog=
 
 # tags are comma separated with spaces allowed
-tags=
+tags= raster reclassification
 
 homepage=https://github.com/miguel-reginaldo/Slicer
 tracker=https://github.com/miguel-reginaldo/Slicer/issues
