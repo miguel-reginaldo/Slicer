@@ -21,9 +21,11 @@ Grouping of pixels on a raster classes
 """
 # Import the PyQt and QGIS libraries
 
+from PyQt4.QtGui import QAction, QIcon, QApplication
+
 from PyQt4.QtCore import QFileInfo, QSettings, QLocale, QTranslator,\
                             QCoreApplication
-from PyQt4.QtGui import QAction, QIcon, QApplication
+
 from qgis.core import QGis, QgsApplication
 
 # Initialize Qt resources from file resources.py

@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/plugins/Slicer" >
-        <file>icon.png</file>
-        <file>icons/medalha.png</file>
-    </qresource>
-</RCC>

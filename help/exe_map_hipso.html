@@ -1,0 +1,274 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="BrOffice 3.3  (Win32)">
+	<META NAME="CREATED" CONTENT="20150304;11350973">
+	<META NAME="CHANGED" CONTENT="20150311;11302193">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		TD P { margin-bottom: 0.21cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=647 CELLPADDING=4 CELLSPACING=3 FRAME=HSIDES RULES=GROUPS STYLE="page-break-before: auto; page-break-after: auto">
+		<COL WIDTH=81>
+		<COL WIDTH=65>
+		<COL WIDTH=330>
+		<COL WIDTH=5>
+		<COL WIDTH=61>
+		<COL WIDTH=57>
+		<TBODY>
+			<TR>
+				<TD WIDTH=81 STYLE="; border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<P><IMG SRC="images/logon.png" NAME="figura1" ALIGN=LEFT WIDTH=48 HEIGHT=48 BORDER=0><BR>
+					</P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=403 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<P ALIGN=JUSTIFY STYLE="border: none; padding: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=5 STYLE="font-size: 20pt"><B>SLICER</B></FONT></FONT></P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=74 STYLE="; border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<A HREF="index.html"><IMG SRC="images/back.png" NAME="figura2" ALIGN=LEFT WIDTH=43 HEIGHT=43 BORDER=0></A></TD>
+				<TD WIDTH=57 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<A HREF="index.html"><IMG SRC="images/home.png" NAME="figura3" ALIGN=LEFT WIDTH=43 HEIGHT=43 BORDER=0></A></TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR>
+				<TD WIDTH=81 STYLE="border: none; padding: 0cm">
+					<P><BR>
+					</P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=403 STYLE="border: none; padding: 0cm"></TD>
+				<TD COLSPAN=3 WIDTH=139 STYLE="; border: none; padding: 0cm"></TD>
+			</TR>
+			<TR>
+				<TD COLSPAN=6 WIDTH=639 STYLE="; border: none; padding: 0cm">
+					<P ALIGN=JUSTIFY STYLE="border: none; padding: 0cm"><A NAME="result_box"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B><SPAN STYLE="background: #ffffff">2
+					&ndash; </SPAN></B></FONT></FONT><FONT SIZE=4 STYLE="font-size: 16pt"><SPAN LANG="en"><B>Example
+					of creating a Hypsometric Map</B></SPAN></FONT></P>
+				</TD>
+			</TR>
+			<TR>
+				<TD COLSPAN=6 WIDTH=639 VALIGN=TOP STYLE="; border: none; padding: 0cm">
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box1"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="background: #ffffff"><SPAN LANG="en">This
+					example uses a Digital Elevation Model (DEM) obtained freely in 
+					<A HREF="http://www.webmapit.com.br/inpe/topodata">http://www.webmapit.com.br/inpe/topodata</A>
+					eletronic address. This is the original data SRTM that after
+					processed were structured grids available in GeoTIFF format
+					(.tif), referenced in latitude / longitude (no projection), with
+					coordinates in decimal degrees and WGS84 datum. We perform the
+					download &ldquo;08S435ZN.tif&rdquo; file, related to altitude
+					data, unpack and carry the QGIS layers panel.</SPAN><SPAN LANG="pt-BR">
+					</SPAN></SPAN></FONT></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_01.jpg" NAME="figura4" ALIGN=LEFT WIDTH=637 HEIGHT=437 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box2"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Open
+					the Plugin Slicer window.</SPAN> </FONT></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_02.jpg" NAME="figura5" ALIGN=LEFT WIDTH=639 HEIGHT=447 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.47cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box3"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">In
+					order to make the image slicing will follow the steps as
+					suggested in Figure below:</SPAN> </FONT></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_03.jpg" NAME="figura6" ALIGN=LEFT WIDTH=623 HEIGHT=596 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box4"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">1&deg;
+					- Find the name of the input raster file we want to slice in the
+					case, &quot;08S435ZN.tif&quot;;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">2&deg;
+					- Enter the name of the output raster file in the case,
+					&quot;Map_Hipsometria_Altitude.tif&quot;;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">3&deg;
+					- Keep the &quot;Add To Raster Layers Panel&quot; marked to add
+					the output raster to QGIS layers panel;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">4&deg;
+					- Keep the &quot;Compress Raster&quot; marked to compress the
+					output file, avoiding waste of hard disk space;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">5&deg;
+					- Check the minimum and maximum values of the pixels of the
+					image, related to altitude;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">6&deg;
+					- In this example the type of step (Step) will be the &quot;Fixed&quot;
+					option, to obtain slices with equal intervals;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">7&deg;
+					- In the &quot;Initial&quot; enter a value lower than the
+					&quot;Minimum Value&quot; in the case, 150 meters;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">8&deg;
+					- In the &quot;End&quot; key in a value at or above the &quot;Maximum
+					Value&quot;, in this case, 700 meters;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">9&deg;
+					- In the Field &quot;Step&quot; enter a value to set the
+					interval between the minimum and maximum values of the slices in
+					this case the step is 50 meters;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">10
+					- Click the &quot;Add&quot; to add the slices in the list box
+					&quot;Slices&quot; button;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">11
+					- You can check the slices that have been added in the list box,
+					and can remove any slice marking the selection to the left of
+					each slice box and following click the &quot;Remove&quot;
+					button;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">12
+					- Finally, click the &quot;Slice&quot; button to start the
+					slicing process.</SPAN> </FONT></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_04.jpg" NAME="figura7" ALIGN=LEFT WIDTH=472 HEIGHT=88 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box5"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Choose
+					the appropriate SRC in this case will be the WSG84.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_05.jpg" NAME="figura8" ALIGN=LEFT WIDTH=613 HEIGHT=666 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box6"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">You
+					will see a dialog box stating that the process was successful,
+					click the &quot;OK&quot; and then in the Slice window click the
+					&quot;Close&quot; button to close it.</SPAN> </FONT></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_06.jpg" NAME="figura9" ALIGN=LEFT WIDTH=504 HEIGHT=555 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box7"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Note
+					that our hypsometric map was added to the layers panel.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_07.jpg" NAME="figura10" ALIGN=LEFT WIDTH=639 HEIGHT=446 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box8"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Now,
+					let's coloring our map. Enter the Layer Properties window and
+					the style guide make the setting described in the figure below:</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_08.jpg" NAME="figura11" ALIGN=LEFT WIDTH=348 HEIGHT=364 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_09.jpg" NAME="figura12" ALIGN=LEFT WIDTH=639 HEIGHT=460 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box9"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">1&deg;
+					- In the selection &quot;Render type&quot; box, select the
+					&quot;Sigleband pseudocolor&quot; option;</SPAN> </FONT></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2&deg; -</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4>
+					</FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">In
+					&quot;Generate new color map&quot; select &quot;RdYlGn&quot;;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box10"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3&deg; - </FONT></FONT><FONT SIZE=4><SPAN LANG="en">Select
+					the &quot;Invert&quot; box;</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">4 - Select the &quot;Min / Max&quot;
+					option;</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">5&deg; - Click the &quot;Load&quot;
+					button;</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">6&deg; - In the &quot;Mode&quot;
+					check box, select Equal interval &quot;;</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">7&deg; - In &quot;Classes&quot;
+					enter the value 11, referring to the number of classes (slices);</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">8&deg; - Click the &quot;Classify&quot;
+					button;</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">9&deg; - In the list box with the
+					slices, change the values of the labels, as shown;</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">10&deg; - Click the bot&atilde;p
+					&quot;Apply&quot;;</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">11&deg; - Finally, click the &quot;OK&quot;
+					button.</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box11"></A>
+					<FONT SIZE=4><SPAN LANG="en">See how was our map: </SPAN></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P><IMG SRC="images/image_10.jpg" NAME="figura13" ALIGN=LEFT WIDTH=639 HEIGHT=446 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+				</TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD COLSPAN=2 WIDTH=154 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<P STYLE="text-indent: 2cm"><BR>
+					</P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=343 STYLE="; border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm"></TD>
+				<TD WIDTH=61 STYLE="; border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<A HREF="index.html"><IMG SRC="images/back.png" NAME="figura14" ALIGN=LEFT WIDTH=43 HEIGHT=43 BORDER=0></A></TD>
+				<TD WIDTH=57 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<A HREF="index.html"><IMG SRC="images/home.png" NAME="figura15" ALIGN=LEFT WIDTH=43 HEIGHT=43 BORDER=0></A></TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>

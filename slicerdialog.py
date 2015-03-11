@@ -6,7 +6,7 @@ SlicerDialog
  Grouping of pixels on a raster classes
                              -------------------
         begin                : 2015-02-02
-        copyright            : (C) 2015 by Miguel Reginaldo Teixeira da Silva
+        copyright            : (C) 2014 by Miguel Reginaldo Teixeira da Silva
         email                : miguel.reginaldo@hotmail.com
  ***************************************************************************/
 
@@ -24,13 +24,16 @@ import os
 
 from osgeo import osr, gdal
 
+from gdalconst import GA_ReadOnly
+
 from qgis import utils
 
 import numpy as np
 
 from PyQt4 import QtCore
 
-from PyQt4.QtGui import QDialog, QMessageBox, QFileDialog, QCursor
+from PyQt4.QtGui import QDialog, QMessageBox, QFileDialog, QCursor, QDesktopServices
+from PyQt4.QtCore import QLocale, QUrl
 
 from slicer_form import Ui_dlgSlicer
 import traceback
@@ -53,7 +56,7 @@ class SlicerDialog(QDialog):
  
         ################ Persistent variables #################
         #Working Directory
-        self.direct = os.path.dirname(__file__) + '\\Dados\\'
+        self.direct = os.path.dirname(__file__) + u'\\Dados\\'
         
         ##############################################
  
@@ -78,6 +81,9 @@ class SlicerDialog(QDialog):
         # Signal from the button 'Slice'
         self.ui.btSlice.clicked.connect(self.slice)
 
+        # Signal from the button 'Help'
+        self.ui.btHelp.clicked.connect(self.help)
+
 
     def type_step(self):
         if self.ui.rbVariable.isChecked():
@@ -96,7 +102,7 @@ class SlicerDialog(QDialog):
         fim = self.ui.sbEnd.value()
         # If the step is variable
         if self.ui.rbVariable.isChecked():
-            item_vl = str(ini)+' - '+str(fim)
+            item_vl = str(ini)+u' ~ '+str(fim)
             if item_vl not in listItems:
                 listSlices.addItem(item_vl)
                 listSlices.item(len(listItems)).setCheckState(0)
@@ -116,7 +122,7 @@ class SlicerDialog(QDialog):
                     fim_mult = ((fim - ini) // pas + 1) * pas + ini
     
                 while fim_pas <= fim_mult:
-                    item_vl = str(ini)+' - '+str(fim_pas)
+                    item_vl = str(ini)+u' ~ '+str(fim_pas)
                     listSlices.addItem(item_vl)
                     listSlices.item(j).setCheckState(0)
                     j += 1
@@ -136,10 +142,12 @@ class SlicerDialog(QDialog):
         slices = []
         listSlices = self.ui.listSlices
         for i in range(listSlices.count()):
-            tx = str(listSlices.item(i).text())
-            pos = tx.find('-')
+            tx = unicode(listSlices.item(i).text())
+            pos = tx.find(u'~')
             ft = (float(tx[:pos-1]), float(tx[pos+2:]))
             slices.append(ft)
+        
+#         listclas = range(1, len(slices)+1)
         
         arq_ent = unicode(self.ui.edInput.text())
         arq_sai = unicode(self.ui.edOutput.text())
@@ -150,10 +158,13 @@ class SlicerDialog(QDialog):
                 self.setCursor(QCursor(QtCore.Qt.WaitCursor))
                 
                 # Convert Raster to array
-                rasterArray = self.rasterTOarray(arq_ent)
+                rasterArray = self.rasterTOarray(arq_ent)[0]
                 
                 rows = rasterArray.shape[0]
                 cols = rasterArray.shape[1]
+                
+                yBSize = rows//20
+                xBSize = yBSize
                 
                 # Get no data value of array
                 noDataValue = self.getNoDataValue(arq_ent)
@@ -164,25 +175,39 @@ class SlicerDialog(QDialog):
                 # Enables Progress Bar
                 prg = self.ui.progressBar
                 prg.setMinimum(0)
-                prg.setMaximum(rasterArray.size)
+                prg.setMaximum(20)
+                prg.setValue(0)
                 prg.setVisible(True)
+                
+                # Updates the screen
                 self.repaint()
                 
-                ct = 1
-                for i, lin in enumerate(rasterArray):
-                    for j, vl in enumerate(lin):
-                        # Evolves the progress bar
-                        prg.setValue(ct)
-                        ct+=1
-                        if vl==noDataValue:
-                            array_slice[i,j] = noDataValue
-                        else:
-                            clas = 1
-                            for sl in slices:
-                                if vl>=sl[0] and vl<sl[1]:
-                                    array_slice[i,j] = clas
-                                clas += 1
+                #Increases the progressbar
+                ct = 0
                 
+                # Loop in the blocks
+                for i in range(0, rows, yBSize):
+                    if i + yBSize < rows:
+                        numRows = yBSize
+                    else:
+                        numRows = rows - i
+                    for j in range(0, cols, xBSize):
+                        if j + xBSize < cols:
+                            numCols = xBSize
+                        else:
+                            numCols = cols - j
+                        data = rasterArray[i:i+numRows, j:j+numCols]
+                        # Slice one block
+                        for cl, sl in enumerate(slices):
+                            cri = (data <= sl[0])|(data > sl[1])
+                            array_slice[i:i+numRows, j:j+numCols] += np.where(cri,0,cl+1)
+                    
+                    # Update progressbar
+                    prg.setValue(ct)
+                    ct+=1
+                
+                array_slice[array_slice==0]=noDataValue
+
                 # Write updated array to new raster
                 self.arrayTOraster(arq_ent,arq_sai,array_slice)
                 
@@ -212,24 +237,53 @@ class SlicerDialog(QDialog):
                                  self.tr(u'You must enter the Input and Output Files!'),
                                  buttons=QMessageBox.Ok,
                                  defaultButton=QMessageBox.NoButton)
+
+    def help(self):
+        plugin_dir = os.path.dirname(__file__)
+        path = os.path.join(plugin_dir, 'help', 'index_%s.html'%QLocale.system().name())
+        if not os.path.exists(path):
+            path = os.path.join(plugin_dir, 'help', 'index.html') 
             
+        url = QUrl()
+        url.setUrl('file:///'+path)
+        QDesktopServices.openUrl(url)            
 
         
     def rasterTOarray(self, arq_ent):
         '''Converts a raster into an array'''
-        raster = gdal.Open(arq_ent, 0)
+        raster = gdal.Open(arq_ent, GA_ReadOnly)
         band = raster.GetRasterBand(1)
-        return band.ReadAsArray()
+        
+        array = band.ReadAsArray()
+        
+        noDataValue = band.GetNoDataValue()
+        
+        vl_min = band.GetMinimum()
+        vl_max = band.GetMaximum()
+        if vl_min is None or vl_max is None:
+            vl_min,vl_max = band.ComputeRasterMinMax(1)
+
+        band = None
+        raster = None
+        
+        return array, noDataValue, vl_min, vl_max
     
     def getNoDataValue(self, arq_ent):
         '''Get the value of NoDataValue'''
-        raster = gdal.Open(arq_ent)
+        raster = gdal.Open(arq_ent, GA_ReadOnly)
         band = raster.GetRasterBand(1)
-        return band.GetNoDataValue()
+        noDataValue = band.GetNoDataValue()
+        if not noDataValue:
+            noDataValue = -999999
+            
+        band = None
+        raster = None
+        
+        return noDataValue
     
     def arrayTOraster(self, arq_ent, arq_sai, array):
         '''Converts an array in a raster'''
-        raster = gdal.Open(arq_ent, 0)
+        raster = gdal.Open(arq_ent, GA_ReadOnly)
         geotransform = raster.GetGeoTransform()
         originX = geotransform[0]
         originY = geotransform[3]
@@ -237,16 +291,34 @@ class SlicerDialog(QDialog):
         pixelHeight = geotransform[5]
         cols = raster.RasterXSize
         rows = raster.RasterYSize
+
+
+        band = raster.GetRasterBand(1)
+        noDataValue = band.GetNoDataValue()
+        if not noDataValue:
+            noDataValue = -999999
+        
+        # Check if the raster compression was enabled
+        compress = self.ui.cbCompress.isChecked()
+        params = []
+        if compress:
+            params = ['COMPRESS=LZW', 'PREDICTOR=2']
     
         driver = gdal.GetDriverByName('GTiff')
-        outRaster = driver.Create(arq_sai, cols, rows, 1, gdal.GDT_Float32)
+        outRaster = driver.Create(arq_sai, cols, rows, 1, gdal.GDT_Float32, params)
         outRaster.SetGeoTransform((originX, pixelWidth, 0, originY, 0, pixelHeight))
         outband = outRaster.GetRasterBand(1)
+        
+        outband.SetNoDataValue(noDataValue)
+        
         outband.WriteArray(array)
         outRasterSRS = osr.SpatialReference()
         outRasterSRS.ImportFromWkt(raster.GetProjectionRef())
         outRaster.SetProjection(outRasterSRS.ExportToWkt())
         outband.FlushCache()
+        
+        band = None
+        raster = None 
 
 
     def select_file(self):
@@ -274,14 +346,14 @@ class SlicerDialog(QDialog):
         '''Checks if the input file exists'''
         if os.path.exists(arq_ent):
             try:
-                # Convert Raster to array
-                rasterArray = self.rasterTOarray(arq_ent)
-                vl_min = rasterArray.min()
-                vl_max = rasterArray.max()
+                # Get the values min and max
+                raster = self.rasterTOarray(arq_ent)
+                vl_min = raster[2]
+                vl_max = raster[3]
                            
-                '''Open the raster'''
-                self.ui.lbMin.setText(unicode(vl_min))
-                self.ui.lbMax.setText(unicode(vl_max))
+                # Set min and max to labels 
+                self.ui.lbMin.setText(unicode(round(vl_min, 2)))
+                self.ui.lbMax.setText(unicode(round(vl_max, 2)))
             except:
                 trace = traceback.format_exc()
                 QMessageBox.critical(self, self.tr(u'Slicer'),

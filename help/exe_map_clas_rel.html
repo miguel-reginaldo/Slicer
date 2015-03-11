@@ -1,0 +1,461 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="BrOffice 3.3  (Win32)">
+	<META NAME="CREATED" CONTENT="20150304;11350973">
+	<META NAME="CHANGED" CONTENT="20150311;16532016">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 2cm }
+		P { margin-bottom: 0.21cm }
+		TD P { margin-bottom: 0.21cm }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="pt-BR" DIR="LTR">
+<CENTER>
+	<TABLE WIDTH=647 CELLPADDING=4 CELLSPACING=3 FRAME=HSIDES RULES=GROUPS STYLE="page-break-before: auto; page-break-after: auto">
+		<COL WIDTH=81>
+		<COL WIDTH=65>
+		<COL WIDTH=330>
+		<COL WIDTH=5>
+		<COL WIDTH=61>
+		<COL WIDTH=57>
+		<TBODY>
+			<TR>
+				<TD WIDTH=81 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<P><IMG SRC="images/logon.png" NAME="figura1" ALIGN=LEFT WIDTH=48 HEIGHT=48 BORDER=0><BR>
+					</P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=403 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<P ALIGN=JUSTIFY STYLE="border: none; padding: 0cm"><FONT FACE="Arial, sans-serif"><FONT SIZE=5 STYLE="font-size: 20pt"><B>SLICER</B></FONT></FONT></P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=74 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<A HREF="index.html"><IMG SRC="images/back.png" NAME="figura2" ALIGN=LEFT WIDTH=43 HEIGHT=43 BORDER=0></A></TD>
+				<TD WIDTH=57 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<A HREF="index.html"><IMG SRC="images/home.png" NAME="figura3" ALIGN=LEFT WIDTH=43 HEIGHT=43 BORDER=0></A></TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR>
+				<TD WIDTH=81 STYLE="border: none; padding: 0cm">
+					<P><BR>
+					</P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=403 STYLE="border: none; padding: 0cm"></TD>
+				<TD COLSPAN=3 WIDTH=139 STYLE="; border: none; padding: 0cm"></TD>
+			</TR>
+			<TR>
+				<TD COLSPAN=6 WIDTH=639 STYLE="; border: none; padding: 0cm">
+					<P ALIGN=JUSTIFY STYLE="border: none; padding: 0cm"><A NAME="result_box"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4 STYLE="font-size: 16pt"><B><SPAN STYLE="background: #ffffff">3
+					&ndash; </SPAN></B></FONT></FONT><FONT SIZE=4 STYLE="font-size: 16pt"><SPAN LANG="en"><B>Example
+					of creating a Relief Classes Map, using steps variables</B></SPAN></FONT><FONT SIZE=4 STYLE="font-size: 16pt"><B>
+					</B></FONT>
+					</P>
+				</TD>
+			</TR>
+			<TR>
+				<TD COLSPAN=6 WIDTH=639 VALIGN=TOP STYLE="; border: none; padding: 0cm">
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box1"></A><A NAME="result_box2"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en"><SPAN STYLE="background: #ffffff">Taking
+					advantage of the altitude 08S435ZN.tif the example of MDE 01,
+					obtained through the e-mail electronic</SPAN></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="background: #ffffff">
+					<A HREF="http://www.webmapit.com.br/inpe/topodata">http://www.webmapit.com.br/inpe/topodata</A>,
+					</SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en"><SPAN STYLE="background: #ffffff">from
+					this we create a slope grid with pixel values in percent</SPAN></SPAN></FONT></FONT><FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN STYLE="background: #ffffff">.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_01.jpg" NAME="figura4" ALIGN=LEFT WIDTH=637 HEIGHT=437 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box3"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Before
+					we continue we must change the projection of our SRTM image that
+					is in lat / lon, to the UTM coordinate system.</SPAN> </FONT></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_11.jpg" NAME="figura16" ALIGN=LEFT WIDTH=286 HEIGHT=225 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box4"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Enter
+					the input file &quot;08S435ZN.tif&quot; and the output file that
+					we will call &quot;08S435ZN_UTM.tif&quot;.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">&quot;Source
+					SRC&quot;, we will inform the coordinate system of the input
+					file, in case WSG84 (EPSG: 4326).</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">In
+					&quot;Target SRC&quot; tell the output file coordinate system in
+					this case will be the SIRGAS 2000 / UTM 23S.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Enter
+					-99 for &quot;No data values&quot; and hold &quot;Load into
+					canvas When finished&quot;.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Finally,
+					click the &quot;OK&quot; button to perform the conversion and,
+					hopefully, our raster will be added to QGIS layers panel,
+					already in UTM.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_12.jpg" NAME="figura17" ALIGN=LEFT WIDTH=381 HEIGHT=535 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_13.jpg" NAME="figura18" ALIGN=LEFT WIDTH=647 HEIGHT=454 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box5"></A>
+					<FONT SIZE=4><FONT FACE="Times New Roman, serif"><SPAN LANG="en">Now
+					we can turn our altitude grid (SRTM) in a slope grid percentage.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_14.jpg" NAME="figura19" ALIGN=LEFT WIDTH=325 HEIGHT=288 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box6"></A>
+					<FONT SIZE=4><SPAN LANG="en">With the DEM window (Terrain
+					models) enter the name of the output file, &quot;08S435N_UTM.tif&quot;,
+					then the output file &quot;Declivity.tif&quot;.</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">In &quot;Mode&quot; check box
+					select the &quot;Slope&quot; option.</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">Keep the &quot;Slope expresso the
+					percent (instead of the degrees)</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">Keep the &quot;Load into canvas
+					When finished&quot; marked.</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.4cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT SIZE=4><SPAN LANG="en">Finally, click the &quot;OK&quot;
+					button to begin processing. At the end, we will raster slope
+					added to the layers panel.</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_15.jpg" NAME="figura20" ALIGN=LEFT WIDTH=368 HEIGHT=688 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_16.jpg" NAME="figura5" ALIGN=LEFT WIDTH=655 HEIGHT=458 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box7"></A>
+					<FONT SIZE=4><SPAN LANG="en">We can now use the Plugin SLICER
+					clicking directly on the add-ons toolbar button.</SPAN></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_17.jpg" NAME="figura21" ALIGN=LEFT WIDTH=343 HEIGHT=119 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 2.47cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box8"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">In
+					order to make the image slicing will follow the steps as
+					suggested in Figure below:</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_18.jpg" NAME="figura22" ALIGN=LEFT WIDTH=471 HEIGHT=556 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box9"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">1&deg;
+					- Find the name of the input raster file we want to slice in the
+					case, &quot;Declivity.tif&quot;;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">2&deg;
+					- Enter the name of the output raster file in the case,
+					&quot;Classes_Relief.tif&quot;;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">3&deg;
+					- Keep the &quot;Add To Raster Layers Panel&quot; marked to add
+					the output raster to QGIS layers panel;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">4&deg;
+					- Keep the &quot;Compress Raster&quot; marked to compress the
+					output file, avoiding waste of hard disk space;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">5&deg;
+					- Check the minimum and maximum values of the pixels of the
+					image, related to altitude;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">6&deg;
+					- In this example the type of step (STEP) is the &quot;Variable&quot;
+					option, to obtain slices with different intervals. In the case
+					we will use the slicing proposed by LEPSCH et al, 1991, adapted
+					to the slope classes:</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<DL>
+						<DD>
+						<TABLE WIDTH=592 CELLPADDING=4 CELLSPACING=0>
+							<COL WIDTH=73>
+							<COL WIDTH=238>
+							<COL WIDTH=257>
+							<TR>
+								<TD WIDTH=73 STYLE="border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding: 0.1cm 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>ID</B></FONT></FONT></P>
+								</TD>
+								<TD WIDTH=238 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding: 0.1cm 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Class
+									Relief</B></FONT></FONT></P>
+								</TD>
+								<TD WIDTH=257 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding: 0.1cm 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4><B>Class
+									Declivity (%)</B></FONT></FONT></P>
+								</TD>
+							</TR>
+							<TR VALIGN=TOP>
+								<TD WIDTH=73 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>1</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=238 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Plan</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=257 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>0 ~ 2</FONT></FONT></P>
+								</TD>
+							</TR>
+							<TR VALIGN=TOP>
+								<TD WIDTH=73 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=238 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Gently Wavy</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=257 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>2 ~5</FONT></FONT></P>
+								</TD>
+							</TR>
+							<TR VALIGN=TOP>
+								<TD WIDTH=73 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>3</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=238 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Moderately
+									Wavy</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=257 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>5 ~10</FONT></FONT></P>
+								</TD>
+							</TR>
+							<TR VALIGN=TOP>
+								<TD WIDTH=73 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>4</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=238 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Wavy</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=257 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>10 ~15</FONT></FONT></P>
+								</TD>
+							</TR>
+							<TR VALIGN=TOP>
+								<TD WIDTH=73 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>5</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=238 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Strong Wavy</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=257 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>15 ~ 45</FONT></FONT></P>
+								</TD>
+							</TR>
+							<TR VALIGN=TOP>
+								<TD WIDTH=73 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>6</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=238 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Mountainous</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=257 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>45 ~ 70</FONT></FONT></P>
+								</TD>
+							</TR>
+							<TR VALIGN=TOP>
+								<TD WIDTH=73 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=CENTER STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>7</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=238 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>Steep</FONT></FONT></P>
+								</TD>
+								<TD WIDTH=257 STYLE="; border: none; padding: 0cm">
+									<P ALIGN=JUSTIFY STYLE="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: none; padding-top: 0cm; padding-bottom: 0.1cm; padding-left: 0cm; padding-right: 0cm">
+									<FONT FACE="Times New Roman, serif"><FONT SIZE=4>&gt; 70</FONT></FONT></P>
+								</TD>
+							</TR>
+						</TABLE>
+					</DL>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box10"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">7
+					- To enter the first class Slope (slice), in the &quot;Initial&quot;
+					key in the lower value of the Slope class, in this case, 0%;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">8
+					- In the &quot;End&quot; enter a final value of Slope Class
+					range, ie 2%;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">9
+					- Click the &quot;Add&quot; button to add the first class Slope
+					(slice); Repeat steps 7-8 to insert the other slope classes in
+					slices list;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">10
+					- You can check the slices that have been added in the list box,
+					and can remove any share by checking the left check box of each
+					slice and following click the &quot;Remove&quot; button;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">11
+					- Finally, click the &quot;Slice&quot; button to start the
+					slicing process.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_04.jpg" NAME="figura7" ALIGN=LEFT WIDTH=472 HEIGHT=88 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box11"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">You
+					will see a dialog box stating that the process was successful,
+					click the &quot;OK&quot; and then in the Slice window click the
+					&quot;Close&quot; button to close it.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_19.jpg" NAME="figura6" ALIGN=LEFT WIDTH=244 HEIGHT=124 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box12"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Note
+					that our major class map was added to layers panel.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_20.jpg" NAME="figura8" ALIGN=LEFT WIDTH=655 HEIGHT=458 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box13"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">Now,
+					let's coloring our map. Enter the Layer Properties window and
+					the style guide make the setting described in the figure below:</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_21.jpg" NAME="figura9" ALIGN=LEFT WIDTH=412 HEIGHT=368 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<IMG SRC="images/image_22.jpg" NAME="figura10" ALIGN=LEFT WIDTH=655 HEIGHT=470 BORDER=0><BR CLEAR=LEFT><BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm"><A NAME="result_box14"></A>
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">1&deg;
+					- In the selection &quot;Render type&quot; box, select the
+					&quot;Sigleband PseudoColor&quot; option;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">2&deg;
+					- Select the &quot;Min / Max&quot; option;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">3&deg;
+					- Click the &quot;Load&quot; button;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">4&deg;
+					- In the &quot;Mode&quot; check box, select Equal interval &quot;;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">5&deg;
+					- In &quot;Classes&quot; enter the value 7, referring to the
+					number of classes (slices);</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">6&deg;
+					- Click the &quot;Classify&quot; button;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">7&deg;
+					- In the list box with the slices, change the values of the
+					labels and colors, as shown;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">8&deg;
+					- Click the &quot;Apply&quot; button;</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">9&deg;
+					- Finally, click the &quot;OK&quot; button.</SPAN></FONT></FONT></P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="text-indent: 1.88cm; margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<FONT FACE="Times New Roman, serif"><FONT SIZE=4><SPAN LANG="en">See
+					how was our map:</SPAN> </FONT></FONT>
+					</P>
+					<P ALIGN=JUSTIFY STYLE="margin-bottom: 0cm; background: transparent; border: none; padding: 0cm">
+					<BR>
+					</P>
+					<P><IMG SRC="images/image_23.jpg" NAME="figura11" ALIGN=LEFT WIDTH=655 HEIGHT=458 BORDER=0><BR CLEAR=LEFT><BR><BR>
+					</P>
+				</TD>
+			</TR>
+		</TBODY>
+		<TBODY>
+			<TR VALIGN=TOP>
+				<TD COLSPAN=2 WIDTH=154 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<P STYLE="text-indent: 2cm"><BR><BR>
+					</P>
+				</TD>
+				<TD COLSPAN=2 WIDTH=343 STYLE="; border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm"></TD>
+				<TD WIDTH=61 STYLE="; border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<A HREF="index.html"><IMG SRC="images/back.png" NAME="figura14" ALIGN=LEFT WIDTH=43 HEIGHT=43 BORDER=0></A></TD>
+				<TD WIDTH=57 STYLE="border-top: 2.60pt double #c0c0c0; border-bottom: 2.60pt double #c0c0c0; border-left: none; border-right: none; padding: 0.11cm 0cm">
+					<A HREF="index.html"><IMG SRC="images/home.png" NAME="figura15" ALIGN=LEFT WIDTH=43 HEIGHT=43 BORDER=0></A></TD>
+			</TR>
+		</TBODY>
+	</TABLE>
+</CENTER>
+<P><BR><BR>
+</P>
+</BODY>
+</HTML>
