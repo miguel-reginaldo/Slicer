@@ -13,7 +13,7 @@ name=Slicer
 qgisMinimumVersion=2.0
 description=Grouping of pixels on a raster classes
 about=SLICER is a plugin developed for version 2.0 of QGIS, which aims to make the slicing (reclassification) of a raster, generating a new numerical grid, with its pixels grouped in classes that were determined by slices (pixel value range). This procedure is very useful, for example, for making relief and hypsometric class maps.
-version=1.1
+version=1.1.1
 author=Miguel Reginaldo Teixeira da Silva
 email=miguel.reginaldo@hotmail.com
 

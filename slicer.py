@@ -6,7 +6,7 @@ Slicer
 Grouping of pixels on a raster classes
                               -------------------
         begin                : 2015-02-02
-        copyright            : (C) 2014 by Miguel Reginaldo Teixeira da Silva
+        copyright            : (C) 2015 by Miguel Reginaldo Teixeira da Silva
         email                : miguel.reginaldo@hotmail.com
  ***************************************************************************/
 
