@@ -24,8 +24,6 @@ import os
 
 from osgeo import osr, gdal
 
-from gdalconst import GA_ReadOnly
-
 from qgis import utils
 
 import numpy as np
@@ -251,7 +249,7 @@ class SlicerDialog(QDialog):
         
     def rasterTOarray(self, arq_ent):
         '''Converts a raster into an array'''
-        raster = gdal.Open(arq_ent, GA_ReadOnly)
+        raster = gdal.Open(arq_ent, 0)
         band = raster.GetRasterBand(1)
         
         array = band.ReadAsArray()
@@ -270,7 +268,7 @@ class SlicerDialog(QDialog):
     
     def getNoDataValue(self, arq_ent):
         '''Get the value of NoDataValue'''
-        raster = gdal.Open(arq_ent, GA_ReadOnly)
+        raster = gdal.Open(arq_ent, 0)
         band = raster.GetRasterBand(1)
         noDataValue = band.GetNoDataValue()
         if not noDataValue:
@@ -283,7 +281,7 @@ class SlicerDialog(QDialog):
     
     def arrayTOraster(self, arq_ent, arq_sai, array):
         '''Converts an array in a raster'''
-        raster = gdal.Open(arq_ent, GA_ReadOnly)
+        raster = gdal.Open(arq_ent, 0)
         geotransform = raster.GetGeoTransform()
         originX = geotransform[0]
         originY = geotransform[3]
